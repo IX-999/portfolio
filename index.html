@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Your Name</title>
+<style>
+  :root {
+    --bg: #FFFFFF;
+    --ink: #1B1F24;
+    --muted: #59636E;
+    --line: #E6E9EC;
+    --link: #0B57D0;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #14181C;
+      --ink: #E6EAEE;
+      --muted: #98A2AC;
+      --line: #2A3138;
+      --link: #7CACF8;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #14181C;
+    --ink: #E6EAEE;
+    --muted: #98A2AC;
+    --line: #2A3138;
+    --link: #7CACF8;
+  }
+
+  * { box-sizing: border-box; margin: 0; }
+  body {
+    background: var(--bg);
+    color: var(--ink);
+    font-family: -apple-system, "Segoe UI", system-ui, sans-serif;
+    font-size: 16px;
+    line-height: 1.65;
+  }
+  a { color: var(--link); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  :focus-visible { outline: 2px solid var(--link); outline-offset: 2px; }
+
+  main { max-width: 640px; margin: 0 auto; padding: 72px 24px 64px; }
+
+  h1 { font-size: 24px; font-weight: 650; }
+  .role { color: var(--muted); margin-top: 2px; }
+
+  section { margin-top: 48px; }
+  h2 {
+    font-size: 16px;
+    font-weight: 650;
+    padding-bottom: 8px;
+    border-bottom: 1px solid var(--line);
+    margin-bottom: 16px;
+  }
+
+  .item { margin-top: 18px; }
+  .item:first-of-type { margin-top: 0; }
+  .item h3 { font-size: 16px; font-weight: 600; display: inline; }
+  .item .note { color: var(--muted); font-size: 14px; margin-left: 8px; }
+  .item p { color: var(--ink); margin-top: 4px; }
+
+  .contact-links { display: flex; gap: 20px; flex-wrap: wrap; margin-top: 16px; }
+
+  footer { margin-top: 56px; padding-top: 16px; border-top: 1px solid var(--line); color: var(--muted); font-size: 14px; }
+
+  @media (max-width: 480px) {
+    main { padding-top: 48px; }
+  }
+</style>
+</head>
+<body>
+<main>
+  <header>
+    <h1>Your Name</h1>
+    <p class="role">Software engineer, building fintech systems.</p>
+    <nav class="contact-links">
+      <a href="#">Resume</a>
+      <a href="#">GitHub</a>
+      <a href="#">LinkedIn</a>
+      <a href="#">LeetCode</a>
+    </nav>
+  </header>
+
+  <section id="projects">
+    <h2>Projects</h2>
+    <p style="color: var(--muted); font-size: 15px; margin-bottom: 16px;">Sample pieces — replace with your own work.</p>
+
+    <div class="item">
+      <h3><a href="#">Double-entry ledger service</a></h3><span class="note">Go</span>
+      <p>An API that enforces double-entry accounting at the database layer: every transaction posts atomically to both sides, so imbalances can't happen. Covers idempotent writes and audit-trail design.</p>
+    </div>
+
+    <div class="item">
+      <h3><a href="#">Limit order book</a></h3><span class="note">Rust</span>
+      <p>An in-memory matching engine for limit orders with price-time priority. Built to explore concurrency and state consistency under contention.</p>
+    </div>
+
+    <div class="item">
+      <h3><a href="#">Payments webhook processor</a></h3><span class="note">Kotlin</span>
+      <p>Handles payment settlement events with exactly-once processing despite duplicate deliveries and retries, using idempotency keys and a small state machine.</p>
+    </div>
+
+    <div class="item">
+      <h3><a href="#">Market-data dashboard</a></h3><span class="note">TypeScript</span>
+      <p>A real-time price and volume display that keeps the UI responsive under a high-frequency feed.</p>
+    </div>
+  </section>
+
+  <footer>© 2026 Your Name</footer>
+</main>
+</body>
+</html>
